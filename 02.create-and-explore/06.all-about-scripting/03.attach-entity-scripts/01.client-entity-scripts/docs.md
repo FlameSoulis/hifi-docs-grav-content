@@ -21,27 +21,27 @@ Here is a client entity script, `changeColorOnClickDown.js`, which when attached
 
 ```
 
- 1 //  changeColorOnClickDown.js
- 2 (function () {
- 3     var clicked = false;
- 4     this.clickDownOnEntity = function (entityID, mouseEvent) {
- 5         if (clicked){
- 6             Entities.editEntity(entityID, { color: { red: 0, green: 255, blue: 255} });
- 7             clicked = false;
- 8         } else {
- 9             Entities.editEntity(entityID, { color: { red: 255, green: 255, blue: 0} });
-10             clicked = true;
-11         }
-12     };
-13 })
+//  changeColorOnClickDown.js
+(function () {
+    var clicked = false;
+    this.clickDownOnEntity = function (entityID, mouseEvent) {
+        if (clicked){
+            Entities.editEntity(entityID, { color: { red: 0, green: 255, blue: 255} });
+            clicked = false;
+        } else {
+            Entities.editEntity(entityID, { color: { red: 255, green: 255, blue: 0} });
+            clicked = true;
+        }
+    };
+})
 
 ```
 
-You'll notice that this example is written as a JavaScript class prototype function. You'll also notice that it uses the mouse event [clickDownOnEntity()](../../../../api-reference/entities#c1). When the user clicks on an entity, `clickDownOnEntity()` triggers the function associated with that click event. In this case, it edits the entity's color back and forth between yellow and magenta.
+You'll notice that this example is written as a JavaScript class prototype function. You'll also notice that it uses the mouse event [clickDownOnEntity()](https://docs.highfidelity.com/api-reference/namespaces/entities#.sendClickDownOnEntity). When the user clicks on an entity, `clickDownOnEntity()` triggers the function associated with that click event. In this case, it edits the entity's color back and forth between yellow and magenta.
 
 To learn more:
-- For more information on events available, see the High Fidelity [JavaScript API](../../../../api-reference).
-- For a list of event methods that may be defined, see [Entities_callbacks](../../../../api-reference/entities#callbacks).
+- For more information on events available, see the High Fidelity [JavaScript API](https://docs.highfidelity.com/api-reference).
+- For a list of event methods that may be defined, see [Entities](https://docs.highfidelity.com/api-reference/namespaces/entities).
 - For more examples, see the [GitHub repository](https://github.com/highfidelity/hifi/tree/master/scripts/tutorials).
 
 

@@ -18,16 +18,15 @@ In this module, we will:
 
 If you went through [Get Started with Scripting in High Fidelity](../get-started-with-scripting), you’ll remember our short code snippet that generated a cube in front of us when we ran our script from the Script Editor. This code, although short, highlights a number of important things that we can do with our High Fidelity scripts.
 
-``````javascript
+```javascript
 
 var boxPosition = Vec3.sum(MyAvatar.position, Quat.getFront(MyAvatar.orientation));
 var properties = {
-type: "Box",
-name: "ScriptBox",
-position: boxPosition,
-color: { red: 0, green: 0, blue: 155 }};
-Ent = Entities.add
-(properties);
+    type: "Box",
+    name: "ScriptBox",
+    position: boxPosition,
+    color: { red: 0, green: 0, blue: 155 }};
+var Ent = Entities.add(properties);
 print("Entity added");
 
 ```
@@ -50,7 +49,7 @@ In our example above, this breaks down into:
 | position | boxPosition                   | variable   |
 | color    | {red: 0, green: 0, blue: 155} | vector     |
 
-While generally you can set whatever properties that you’d like in your entities, only the ones that are present in the [Entity Properties API](../../api-reference/entities#properties) will be handled directly by Interface. This means that you can extend an object with your own fields, but you will need to handle them yourself.
+While generally you can set whatever properties that you’d like in your entities, only the ones that are present in the [Entity Properties API](../../api-reference/namespaces/entities#.EntityProperties) will be handled directly by Interface. This means that you can extend an object with your own fields, but you will need to handle them yourself.
 
 This cube script is helpful to create a single cube with a specific set of properties, but we may want to spawn new cubes with different properties from this one. We may also want to define a set of functions for our cubes, so we want to make our script more extensible and reusable across a number of different cubes that we can generate with the same spawning script.
 
@@ -67,8 +66,8 @@ We’re going to update our cube.js file so that we can use it as the script tha
 		name: "ScriptBox",
 		position: position,
 		color: { red: 0, green: 0, blue: 155 }};
-	Ent = Entities.addEntity(properties);
-	print("Entity added");	
+	var Ent = Entities.addEntity(properties);
+	print("Entity added");
 })
 
 ```
@@ -93,7 +92,7 @@ _this.clickDownOnEntity = function(entityID, event){
 
 ```
 
-What we now have is a basic script that has defined what happens when the entity is clicked. The keyword this refers to the parent object currently in scope, in this case, our cube. We specifically use `clickDownOnEntity `, since this is a function defined in the [Entity Functions API](https://wiki.highfidelity.com/wiki/Entity_Functions_API) and will be recognized by High Fidelity when we click on our cube.
+What we now have is a basic script that has defined what happens when the entity is clicked. The keyword this refers to the parent object currently in scope, in this case, our cube. We specifically use `clickDownOnEntity `, since this is a function defined in the [Entity Functions API](https://docs.highfidelity.com/api-reference/namespaces/entities) and will be recognized by High Fidelity when we click on our cube.
 
 Now, what we need to do is specify exactly what happens when we click on our cube. Right now, the only thing that happens is that we’ll use the ‘print’ function to write a statement. We’re going to do three things:
 
@@ -112,7 +111,7 @@ Under the closing brackets of your clickDownOnEntity function, add the following
 var changeColor = function(entityID){		
 		var newRed = Math.random()*255;
 		var newGreen = Math.random()*255;
-		var newBlue = Math.random()*255;	
+		var newBlue = Math.random()*255;
 
 		var newProperty = { color: {red: newRed, green: newGreen, blue: newBlue}};
 		Entities.editEntity(entityID, newProperty);
@@ -208,7 +207,7 @@ cube.js
 	var changeColor = function(entityID){		
 		var newRed = Math.random()*255;
 		var newGreen = Math.random()*255;
-		var newBlue = Math.random()*255;	
+		var newBlue = Math.random()*255;
 
 		var newProperty = { color: {red: newRed, green: newGreen, blue: newBlue}};
 		Entities.editEntity(entityID, newProperty);
@@ -357,7 +356,7 @@ Entities.addEntity({
 
 ```
 
-In the same way that we use `Entities.addEntity `in our cube spawning object to make new cubes, we also use the [Entity Functions API](https://wiki.highfidelity.com/wiki/Entity_Functions_API) to add our spawner when we launch the createCubeSpawner script. We added one additional entity property, ‘dimensions’, which will make our spawner a little bit longer than the other cubes. We also gave it a name to make it easier to find in our entity list.
+In the same way that we use `Entities.addEntity `in our cube spawning object to make new cubes, we also use the Entity Functions API to add our spawner when we launch the createCubeSpawner script. We added one additional entity property, ‘dimensions’, which will make our spawner a little bit longer than the other cubes. We also gave it a name to make it easier to find in our entity list.
 
 Cleaning up our Cubes If you click around on your spawner a lot, you’ll generate a pretty large number of cubes quickly, which can be a pain to clean up! We’re going to change our code in our cube spawner to delete all of the cubes we’ve made when we delete the spawner, so we can remove all of them with one deletion.
 
@@ -453,14 +452,14 @@ What we’ve done is build up our system to allow us to run a single script in o
 
 ### Additional Resources for Chapter 2
 
-- [Entity Functions API](https://wiki.highfidelity.com/wiki/Entity_Functions_API)
+- [Entity Functions API](https://docs.highfidelity.com/api-reference/namespaces/entities)
 - [JavaScript Array Reference](https://www.w3schools.com/js/js_arrays.asp)
 - [JavaScript While Loops](https://www.w3schools.com/js/js_loop_while.asp)
-- [Creating Client Entity Scripts](https://wiki.highfidelity.com/wiki/Creating_Client_Entity_Scripts)
-- [Creating Server Entity Scripts](https://wiki.highfidelity.com/wiki/Creating_Server_Entity_Scripts)
-- [Attaching Entity Scripts](https://wiki.highfidelity.com/wiki/Attaching_Entity_Scripts)
-- [Script Types Overview](https://wiki.highfidelity.com/wiki/Script_Types_Overview)
-- [Entity script examples](https://wiki.highfidelity.com/wiki/Entity_script_examples)
+- [Creating Client Entity Scripts](https://docs.highfidelity.com/create-and-explore/all-about-scripting/attach-entity-scripts/client-entity-scripts)
+- [Creating Server Entity Scripts](https://docs.highfidelity.com/create-and-explore/all-about-scripting/attach-entity-scripts/server-entity-scripts)
+- [Attaching Entity Scripts](https://docs.highfidelity.com/create-and-explore/all-about-scripting/attach-entity-scripts)
+- [Script Types Overview](https://docs.highfidelity.com/create-and-explore/all-about-scripting)
+- [Entity script examples](https://github.com/highfidelity/hifi/tree/master/script-archive/entityScripts)
 
 ## Chapter 3: Moving & Equipping our Spawner
 
@@ -469,8 +468,6 @@ In Chapter 2, we made a cube spawner object that we could create by running a si
 - Make our spawner moveable
 - Add an equippable property to our spawner so that we can carry it around
 - Change where our cubes are spawned so it is easier to place them in specific locations
-
-If you haven’t followed along with chapters 1 & 2, download the following files to start from: [Download Entity Scripting 103 Resources](https://hifi-content.s3.amazonaws.com/liv/Entity_Scripts_103_Starting.zip)
 
 Note: This tutorial adds in functionality that takes advantage of hand controllers for a VR headset.
 
@@ -505,7 +502,7 @@ However, we’ve caused a slight problem for ourselves by making our spawner gra
 
 ### Updating spawnCube.js to use a prototype function
 
-Head back into spawnCube.js - we’ll be modifying this significantly to take advantage of the capabilities of a prototype function. We’ll also be using the [Hand Controller API](https://wiki.highfidelity.com/wiki/Hand_Controller_API) to assign specific functionality to our spawner so we can spawn cubes from our trigger pulls.
+Head back into spawnCube.js - we’ll be modifying this significantly to take advantage of the capabilities of a prototype function. We’ll also be using the [Hand Controller API](https://docs.highfidelity.com/api-reference/namespaces/controller) to assign specific functionality to our spawner so we can spawn cubes from our trigger pulls.
 
 We’ll start by adding in an array that stores references to our right and left controller triggers. We will also create an empty variable that we’ll call ‘hand’, which will store a reference to whichever hand picks up the cube spawner. Under your cubeList array, add the following to your spawnCube.js script:
 
@@ -672,7 +669,7 @@ var frontPosition = function(){
 
 	var front = Quat.getFront(rotation);
 	var offset = Vec3.multiply(front, 0.25);
-	
+
 	return Vec3.sum(position, offset);
 }
 
@@ -752,7 +749,7 @@ var frontPosition = function(){
 
 	var front = Quat.getFront(rotation);
 	var offset = Vec3.multiply(front, 0.25);
-	
+
 	return Vec3.sum(position, offset);
 }
 
@@ -773,4 +770,3 @@ return new CubeSpawner();
 ### Recap
 
 In this tutorial, we added the ability to grab and carry our spawner with us, changed our cube creating behavior from a mouse click to use hand controller triggers, and updated the initial location of our cubes to add them in front of the spawner instead of in front of our avatar. We covered some of the basics of prototype functions, and began to use our entity properties to calculate new positions for objects.
-

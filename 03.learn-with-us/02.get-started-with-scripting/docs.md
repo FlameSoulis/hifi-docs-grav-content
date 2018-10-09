@@ -31,15 +31,16 @@ With your text editor open, you can now view and modify scripts in your domain o
 
 1. Type `print("Hello, World");` into your text editor's window.
 2. Save your script as testScript.js on your computer. 
-3. On your tablet, go to **Menu > Settings** and enable both Advanced and Developer menus. 
-4. Go to **Menu > Edit > Open and Run Script**. 
-5. Your tablet will now display your local system's directory. You can find your script file and click on **Open**.
-6. You will see your text printed in the console window. Your script will continue running until you stop it.
+3. On your tablet, go to **Menu > Settings** and enable both Advanced and Developer menus.
+4. In the developer menu select Script Log (HMD Friendly).
+5. Go to **Menu > Edit > Open and Run Script**. 
+6. Your tablet will now display your local system's directory. You can find your script file and click on **Open**.
+7. You will see your text printed in the Script Log window which is titled 'Debug Window'. Your script will continue running until you stop it.
 
-Instead of using the **Create** app to add a cube entity, let;s use a script. Replace your `print(“Hello, World”)` in testScript.js with with the following example:
+Instead of using the **Create** app to add a cube entity, let's use a script. Replace your `print(“Hello, World”)` in testScript.js with with the following example:
 
 ```
-\\ Getting your position in the domain, so that the cube is spawned in front of you. 
+// Getting your position in the domain, so that the cube is spawned in front of you. 
 var position = Vec3.sum(MyAvatar.position, Quat.getFront(MyAvatar.orientation));
 var properties = {
     type: "Box",
@@ -47,7 +48,7 @@ var properties = {
     position: position,
     color: { red: 0, green: 0, blue: 155 }
 };
-Ent = Entities.addEntity(properties);
+var Ent = Entities.addEntity(properties);
 print("Entity added");
 
 ```

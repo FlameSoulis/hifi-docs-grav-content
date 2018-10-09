@@ -12,7 +12,7 @@ Learn how you can create and upload avatars to High Fidelity.
 
 ## Prerequisites
 
-* You’ll need to [download and install](https://highfidelity.com/download) High Fidelity’s Interface and Sandbox. 
+* You’ll need to [download and install](https://highfidelity.com/download/sandbox) High Fidelity’s Interface and Sandbox. 
 * Download and install a 3D Modelling software such as Blender or Maya. 
 
   ​
@@ -72,4 +72,4 @@ Once you have your avatar's .fst file, you can upload it.
 
 #### Avatar Menu
 
-Once you are wearing the avatar of your choice, you can pull up your tablet and go to Menu > Avatar to change the settings and manage your [avatar bookmarks](../../new-features/bookmark-avatar). ![](avatar-menu.PNG)
+Once you are wearing the avatar of your choice, you can pull up your tablet and go to Menu > Avatar to change the settings and manage your [avatar bookmarks](https://docs.highfidelity.com/create-and-explore/avatars/bookmark-avatar). ![](avatar-menu.PNG)

@@ -10,6 +10,8 @@ taxonomy:
 
 High Fidelity avatars are FBX files, with specific orientations and joints as described below. You can change your avatar by going to **Settings > Avatar > Appearance**, and specifying the URL to your avatar. 
 
+>>>>> Go [here](https://docs.highfidelity.com/create-and-explore/avatars/create-avatars) for more information about how to create your own avatar.
+
 Presently, you need to host your own avatar file somewhere, unless you are using one of the examples found in the marketplace. You can use a marketplace avatar (and also download and explore them as samples to create your own) by going to the marketplace, selecting the 'Avatars' category, and choosing one.
 
 ## Reference Pose
@@ -17,6 +19,7 @@ Presently, you need to host your own avatar file somewhere, unless you are using
 ![](hifi-skel.png)
 
 >>>>> You can download the standard High Fidelity skeleton [here](http://hifi-content.s3.amazonaws.com/Examples%20Content/skeleton/standard_hifi_skeleton.fbx).
+If you aren't familiar with the rigging process, you can auto-rig your avatar with [Mixamo](https://www.mixamo.com/)
 
 For the Reference pose, we propose a TPose which complies with the specifications below. You may wish to refer to the properly configured example avatar fbx with source files.
 
@@ -46,76 +49,6 @@ For the Reference pose, we propose a TPose which complies with the specification
 - In Maya: joint rotations can be zero & joint orientations can be non-zero.
 - In Blender the joint rotation values can be non-zero.
 - For the hand and related controller animation, make sure the middle finger is the first joint in the list of finger joints.
-
-### Default Joint Orientation Values
-
-- Hips = 0,0,0
-- Spine = 0,0,0
-- Spine1 = 0,0,0
-- Spine2 = 0,0,0
-- Neck = 0,0,0
-- Head = 0,0,0
-- HeadTop_End = 0,0,0
-- RightEye = 0,0,0
-- LeftEye = 0,0,0
-- LeftShoulder = 90,90,90
-- LeftArm = 0,0,0
-- LeftForeArm = 0,0,0
-- LeftHand = 0,0,0
-- LeftHandMiddle1 = 0,0,0
-- LeftHandMiddle2 = 0,0,0
-- LeftHandMiddle3 = 0,0,0
-- LeftHandMiddle4 = 0,0,0
-- LeftHandThumb1 = 0,0,0
-- LeftHandThumb2 = 0,0,0
-- LeftHandThumb3 = 0,0,0
-- LeftHandThumb4 = 0,0,0
-- LeftHandIndex1 = -0.07161852612,-0.07161852612,-0.07161852612
-- LeftHandIndex2 = 0.0714482688,0.0714482688,0.0714482688
-- LeftHandIndex3 = 0,0,0
-- LeftHandIndex4 = 0,0,0
-- LeftHandRing1 = 0,0,0
-- LeftHandRing2 = 0,0,0
-- LeftHandRing3 = 0,0,0
-- LeftHandRing4 = 0,0,0
-- LeftHandPinky1 = 0,0,0
-- LeftHandPinky2 = 0,0,0
-- LeftHandPinky3 = 0,0,0
-- LeftHandPinky4 = 0,0,0
-- RightShoulder = 90,90,90
-- RightArm = 0,0,0
-- RightForeArm = 0,0,0
-- RightHand = 0,0,0
-- RightHandMiddle1 = 0,0,0
-- RightHandMiddle2 = 0,0,0
-- RightHandMiddle3 = 0,0,0
-- RightHandMiddle4 = 0,0,0
-- RightHandPinky1 = 0,0,0
-- RightHandPinky2 = 0,0,0
-- RightHandPinky3 = 0,0,0
-- RightHandPinky4 = 0,0,0
-- RightHandRing1 = 0,0,0
-- RightHandRing2 = 0,0,0
-- RightHandRing3 = 0,0,0
-- RightHandRing4 = 0,0,0
-- RightHandIndex1 = 0,0,0
-- RightHandIndex2 = 0,0,0
-- RightHandIndex3 = 0,0,0
-- RightHandIndex4 = 0,0,0
-- RightHandThumb1 = 0,0,0
-- RightHandThumb2 = 0,0,0
-- RightHandThumb3 = 0,0,0
-- RightHandThumb4 = 0,0,0
-- LeftUpLeg = 0,0,0
-- LeftLeg = 0,0,0
-- LeftFoot = 51.39617927,51.39617927,51.39617927
-- LeftToeBase = 38.19675833,38.19675833,38.19675833
-- LeftToe_End = 0,0,0
-- RightUpLeg = 0,0,0
-- RightLeg = 0,0,0
-- RightFoot = 51.4549916,51.4549916,51.4549916
-- RightToeBase = 38.19938444,38.19938444,38.19938444
-- RightToe_End = 0,0,0
 
 ## Look-at Vectors
 
@@ -175,7 +108,7 @@ To view the default blendshapes for the default Being of Light avatar, open the 
 ## Other Important Points
 
 * Your avatar should be able to make a fist when the user presses the grip button (also other finger compatibility with the Touch and the future knuckle controllers). 
-* Your avtar should have clothes included in the mesh to avoid "naked" moments. 
+* Your avatar should have clothes included in the mesh to avoid "naked" moments. 
 * Remove unused blendshapes or unseen triangles to keep size down.
 * Your maximum texture limit should be 1024x1024.
 * Average polycount limit: 25k
@@ -184,68 +117,67 @@ To view the default blendshapes for the default Being of Light avatar, open the 
 ## Joint Hierarchy and Naming
 
 - Hips
-  - Spine
-    - Spine1
-      - Spine2
-        - Neck
-          - Head
-            - HeadTop_End
-        - LeftShoulder
-          - LeftArm
-            - LeftForeArm
-              - LeftHand
-                - LeftHandThumb1
-                - LeftHandThumb2
-                - LeftHandThumb3
-                - LeftHandThumb4
-                - LeftHandIndex1
-                - LeftHandIndex2
-                - LeftHandIndex3
-                - LeftHandIndex4
-                - LeftHandMiddle1
-                - LeftHandMiddle2
-                - LeftHandMiddle3
-                - LeftHandMiddle4
-                - LeftHandRing1
-                - LeftHandRing2
-                - LeftHandRing3
-                - LeftHandRing4
-                - LeftHandPinky1
-                - LeftHandPinky2
-                - LeftHandPinky3
-                - LeftHandPinky4
-        - RightShoulder
-          - RightArm
-            - RightForeArm
-              - RightHand
-                - RightHandThumb1
-                - RightHandThumb2
-                - RightHandThumb3
-                - RightHandThumb4
-                - RightHandIndex1
-                - RightHandIndex2
-                - RightHandIndex3
-                - RightHandIndex4
-                - RightHandMiddle1
-                - RightHandMiddle2
-                - RightHandMiddle3
-                - RightHandMiddle4
-                - RightHandRing1
-                - RightHandRing2
-                - RightHandRing3
-                - RightHandRing4
-                - RightHandPinky1
-                - RightHandPinky2
-                - RightHandPinky3
-                - RightHandPinky4
-  - LeftUpLeg
-    - LeftLeg
-      - LeftFoot
-        - LeftToeBase
-          - LeftToe_End
-  - RightUpLeg
-    - RightLeg
-      - RightFoot
-        - RightToeBase
-          - RightToe_End
-
+    - Spine
+        - Spine1
+            - Spine2
+                - Neck
+                    - Head
+                        - HeadTop_End
+                - LeftShoulder
+                    - LeftArm
+                        - LeftForeArm
+                            - LeftHand
+                                - LeftHandThumb1
+                                    - LeftHandThumb2
+                                        - LeftHandThumb3
+                                            - LeftHandThumb4
+                                - LeftHandIndex1
+                                    - LeftHandIndex2
+                                        - LeftHandIndex3
+                                            - LeftHandIndex4
+                                - LeftHandMiddle1
+                                    - LeftHandMiddle2
+                                        - LeftHandMiddle3
+                                            - LeftHandMiddle4
+                                - LeftHandRing1
+                                    - LeftHandRing2
+                                        - LeftHandRing3
+                                            - LeftHandRing4
+                                - LeftHandPinky1
+                                    - LeftHandPinky2
+                                        - LeftHandPinky3
+                                            - LeftHandPinky4
+                - RightShoulder
+                    - RightArm
+                        - RightForeArm
+                            - RightHand
+                                - RightHandThumb1
+                                    - RightHandThumb2
+                                        - RightHandThumb3
+                                            - RightHandThumb4
+                                - RightHandIndex1
+                                    - RightHandIndex2
+                                        - RightHandIndex3
+                                            - RightHandIndex4
+                                - RightHandMiddle1
+                                    - RightHandMiddle2
+                                        - RightHandMiddle3
+                                            - RightHandMiddle4
+                                - RightHandRing1
+                                    - RightHandRing2
+                                        - RightHandRing3
+                                            - RightHandRing4
+                                - RightHandPinky1
+                                    - RightHandPinky2
+                                        - RightHandPinky3
+                                            - RightHandPinky4
+    - LeftUpLeg
+        - LeftLeg
+            - LeftFoot
+                - LeftToeBase
+                    - LeftToe_End
+    - RightUpLeg
+        - RightLeg
+            - RightFoot
+                - RightToeBase
+                    - RightToe_End
